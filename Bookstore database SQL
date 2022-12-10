@@ -12,17 +12,14 @@ INSERT into books VALUES (7, "Hatchet", 11.99, 8);
 INSERT into books VALUES (8, "IT", 19.99, 10);
 
 -display books ordered by price
-
 SELECT * from books
 ORDER BY price;
 
 -what are the 3 best rated books?
-
 SELECT name, rating FROM books
 ORDER BY rating DESC
 LIMIT 3;
 
 -what is the average price for a book here?
-
 SELECT AVG(price)
 FROM books
