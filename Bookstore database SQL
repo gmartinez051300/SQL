@@ -1,18 +1,28 @@
-Welcome to my SQL portfolio! This code repository contains examples of SQL I've written. Feel free to take a look and reach out if you have any questions.
+-create a bookstore database
 
--Create a bookstore database
+CREATE TABLE books (id INTEGER, name TEXT, price INTEGER, rating INTEGER);
 
-CREATE TABLE books (id INTEGER, name TEXT, quantity INTEGER, price INTEGER);
+INSERT into books VALUES (1, "Hunger Games", 15.99, 9);
+INSERT into books VALUES (2, "To Kill a Mockingbird", 5.99, 8);
+INSERT into books VALUES (3, "Charlott's Web", 5.99, 8);
+INSERT into books VALUES (4, "Dracula", 6.99, 7);
+INSERT into books VALUES (5, "Scythe", 18.99, 9);
+INSERT into books VALUES (6, "Lord of the Flies", 9.99, 8);
+INSERT into books VALUES (7, "Hatchet", 11.99, 8);
+INSERT into books VALUES (8, "IT", 19.99, 10);
 
-INSERT INTO books VALUES (1,"history", 50, 50);
-INSERT INTO books VALUES (2, "economics", 100, 12);
-INSERT INTO books VALUES (3, "math", 30, 40);
-INSERT INTO books VALUES (4, "english", 60, 20);
-INSERT INTO books VALUES (5, "science", 40, 50);
+-display books ordered by price
 
--display the datbase ordered by price
-SELECT * FROM books
-WHERE price ORDER BY price desc; 
+SELECT * from books
+ORDER BY price;
 
-- how many books are available to sell?
-SELECT SUM(quantity) FROM books
+-what are the 3 best rated books?
+
+SELECT name, rating FROM books
+ORDER BY rating DESC
+LIMIT 3;
+
+-what is the average price for a book here?
+
+SELECT AVG(price)
+FROM books
