@@ -1,25 +1,29 @@
--create a bookstore database
+- create a gym equipment store database
 
-CREATE TABLE books (id INTEGER, name TEXT, price INTEGER, rating INTEGER);
+CREATE TABLE gym_equipment (id INTEGER, product TEXT, quantity INTEGER, price INTEGER, equipment_type TEXT);
 
-INSERT into books VALUES (1, "Hunger Games", 15.99, 9);
-INSERT into books VALUES (2, "To Kill a Mockingbird", 5.99, 8);
-INSERT into books VALUES (3, "Charlott's Web", 5.99, 8);
-INSERT into books VALUES (4, "Dracula", 6.99, 7);
-INSERT into books VALUES (5, "Scythe", 18.99, 9);
-INSERT into books VALUES (6, "Lord of the Flies", 9.99, 8);
-INSERT into books VALUES (7, "Hatchet", 11.99, 8);
-INSERT into books VALUES (8, "IT", 19.99, 10);
+INSERT INTO gym_equipment VALUES (1, "adjustable_dumbells", 50, 299.99, "freeweight");
+INSERT INTO gym_equipment VALUES (2, "barbell", 25, 79.99, "freeweight");
+INSERT INTO gym_equipment VALUES (3, "pullup_tower", 15, 49.99, "station");
+INSERT INTO gym_equipment VALUES (4, "dip_bar", 30, 39.99, "station");
+INSERT INTO gym_equipment VALUES (5, "squat_rack", 10, 599.99, "station");
+INSERT INTO gym_equipment VALUES (6, "treadmill", 50, 799.99, "machine");
+INSERT INTO gym_equipment VALUES (7, "cable_tower", 20, 499.99, "station");
+INSERT INTO gym_equipment VALUES (8, "row_machine", 15, 399.99, "machine");
+INSERT INTO gym_equipment VALUES (9, "adjustable_kettlebell", 50, 179.99, "freeweight");
+INSERT INTO gym_equipment VALUES (10, "sandbag", 100, 49.99, "freeweight");
+INSERT INTO gym_equipment VALUES (11, "resistance_bands", 200, 19.99, "freeweight");
+INSERT INTO gym_equipment VALUES (12, "eliptical", 20, 199.99, "machine");
+INSERT INTO gym_equipment VALUES (13, "adjustable_bench", 70, 99.99, "station");
+INSERT INTO gym_equipment VALUES (14, "punching_bag", 50, 149.99, "station");
+INSERT INTO gym_equipment VALUES (15, "curled_barbell", 15, 69.99, "freeweight");
 
--display books ordered by price
-SELECT * from books
-ORDER BY price;
+-display the gym equipment by price
+SELECT product,price FROM gym_equipment
+ORDER BY price desc;
 
--what are the 3 best rated books?
-SELECT name, rating FROM books
-ORDER BY rating DESC
-LIMIT 3;
+- what is the average cost of the gym equipment?
+SELECT AVG(price) FROM gym_equipment;
 
--what is the average price for a book here?
-SELECT AVG(price)
-FROM books
+-how many pieces of equipment do we have?
+SELECT SUM(quantity) FROM gym_equipment;
