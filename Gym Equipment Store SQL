@@ -1,6 +1,6 @@
 - create a gym equipment store database
 
-CREATE TABLE gym_equipment (id INTEGER, product TEXT, quantity INTEGER, price INTEGER, equipment_type TEXT);
+CREATE TABLE gym_equipment (id INTEGER, product TEXT, quantity INTEGER, price INTEGER, type TEXT);
 
 INSERT INTO gym_equipment VALUES (1, "adjustable_dumbells", 50, 299.99, "freeweight");
 INSERT INTO gym_equipment VALUES (2, "barbell", 25, 79.99, "freeweight");
