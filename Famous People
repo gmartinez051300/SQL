@@ -1,0 +1,34 @@
+- create table for famous people database
+
+CREATE TABLE singers (id INTEGER, name TEXT, age INTEGER);
+INSERT into singers VALUES (1, "taylor swift", 33);
+INSERT into singers VALUES (2, "miley cyrus", 30);
+INSERT into singers VALUES (3, "justin timberlake", 41);
+INSERT into singers VALUES (4, "billie eilish", 20);
+INSERT into singers VALUES (5, "becky g", 25);
+
+CREATE TABLE birthplace (id INTEGER, state_name TEXT);
+INSERT into birthplace VALUES (1, "Pennsylvania");
+INSERT into birthplace VALUES (2, "Tennessee");
+INSERT into birthplace VALUES (3, "Tennessee");
+INSERT into birthplace VALUES (4, "California");
+INSERT into birthplace VALUES (5, "California");
+
+CREATE TABLE songs (id INTEGER, quantity INTEGER, bestsingle_name TEXT);
+INSERT into songs VALUES (1, 61, "love story");
+INSERT into songs VALUES (2, 37, "wrecking ball");
+INSERT into songs VALUES (3, 167, "Cant stop the feeling");
+INSERT into songs VALUES (4, 33, "Bad guy");
+INSERT into songs VALUES (5, 72, "Mamiii");
+
+- display name, birthplace, and age combining multiple data tables
+SELECT singers.name, singers.age, birthplace.state_name
+FROM singers
+JOIN birthplace
+ON singers.id=birthplace.id;
+
+- display artist, best single, and number of realeased songs combining multiple data tables
+SELECT singers.name, songs.bestsingle_name, songs.quantity AS songs_released
+FROM singers
+JOIN songs
+ON singers.id=songs.id;
